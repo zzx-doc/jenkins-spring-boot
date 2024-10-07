@@ -1,6 +1,7 @@
 package org.baseframe.controller;
 
 import org.baseframe.service.HelloService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,15 @@ public class TestController {
     @RequestMapping("/hello")
     public String hello() {
         return helloService.getHello();
+    }
+
+    /**
+     * 测试Jenkins CI/CD
+     *
+     * @return {@link String}
+     */
+    @GetMapping("/helloJenkins")
+    public String helloJenkins() {
+        return "hello jenkins";
     }
 }
